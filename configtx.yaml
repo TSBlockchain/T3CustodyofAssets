@@ -1,0 +1,59 @@
+
+Organizations:
+
+  - &OrdererOrg
+      
+      Name: OrdererOrg
+
+      ID: OrdererMSP
+      
+      MSPDir: crypto-config/ordererOrganizations/team3/msp
+  
+  - &Team3
+
+      Name: Team3MSP
+
+      ID: Team3MSP
+
+      MSPDir: crypto-config/peerOrganizations/team3/msp
+
+      AnchorPeers:
+
+        - Host: peer0.team3
+          port: 7051
+
+Application: &ApplicationDefaults
+
+  Organizations:
+
+Orderer: &OrdererDefaults
+
+  OrdererType: solo
+  Addresses:
+    - orderer.team3:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+  Kafka:
+    Brokers:
+      - 127.0.0.1:9092
+  Organizations:
+Profiles:
+  OneOrgOrdererGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+        - *OrdererOrg
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+          - *Team3
+  OneOrgChannel:
+    Consortium: SampleConsortium
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *Team3       
+
