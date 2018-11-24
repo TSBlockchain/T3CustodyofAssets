@@ -8,11 +8,51 @@ OrdererOrgs:
 
 PeerOrgs:
 
-  - Name: Team3
-    Domain: team3
+  - Name: Team3Org1
+    Domain: org1.team3
     Template:
-      Count: 6
+      Count: 1
       Start: 0
       Hostname: .Prefix.Index
     Users:
-      Count: 1  
+      Count: 1
+  - Name: Team3Org2
+    Domain: org2.team3
+    Template:
+      Count: 1
+      Start: 0
+      Hostname: .Prefix.Index
+    Users:
+      Count: 1
+  - Name: Team3Org3
+    Domain: org3.team3
+    Template:
+      Count: 1
+      Start: 0
+      Hostname: .Prefix.Index
+    Users:
+      Count: 1
+  - Name: Team3Org4
+    Domain: org4.team3
+    Template:
+      Count: 1
+      Start: 0
+      Hostname: .Prefix.Index
+    Users:
+      Count: 1    
+  - Name: Team3Org5
+    Domain: org5.team3
+    Template:
+      Count: 1
+      Start: 0
+      Hostname: .Prefix.Index
+    Users:
+      Count: 1
+  - Name: Team3Org6
+    Domain: org6.team3
+    Template:
+      Count: 1
+      Start: 0
+      Hostname: .Prefix.Index
+    Users:
+      Count: 1

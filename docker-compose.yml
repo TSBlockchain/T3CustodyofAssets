@@ -5,58 +5,58 @@ networks:
   main:
 
 services:
-  ca.team3.peer1:
+  ca.org1.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer1
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.team3-cert.pem
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/d7f23560869cdc061a9af3e1a624dd512e5cb870039437a61a8df27622760f38_sk
     ports:
       - "8001:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer1/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./crypto-config/peerOrganizations/org1.team3/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.team3.peer1
     networks:
       - main
-  ca.team3.peer2:
+  ca.org2.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer2
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.team3-cert
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/82576490305801e90ca72c9ec05b69d298177c28e7e737ff5f2dad6aef7d69e2_sk
     ports:
       - "8002:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer2/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./crypto-config/peerOrganizations/org2.team3/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.team3.peer2
     networks:
       - main
-  ca.team3.peer3:
+  ca.org3.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer3
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.team3-cert
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/82fa25d91bac750add0a1c50a933a24270097a497146ab3e919f5e4f129a3ce9_sk
     ports:
       - "8003:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer3/ca/:/etc/hyperledger/fabric-ca-server-config
+      - ./crypto-config/peerOrganizations/org3.team3/ca/:/etc/hyperledger/fabric-ca-server-config
     container_name: ca.team3.peer3
     networks:
       - main    
-  ca.team3.peer4:
+  ca.org4.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer4
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.team3-cert
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/3341e4b898b818ca9d874ad30e8df7375dd5cdbdd0d3080b8e4f9d26b667bd2d_sk
     ports:
       - "8004:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
@@ -65,13 +65,13 @@ services:
     container_name: ca.team3.peer4
     networks:
       - main
-  ca.team3.peer5:
+  ca.org5.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer5
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.team3-cert
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/17eecc8e3c18c096e52c7b0551da59147e4caf3bb3a328bc5050d1d31f1bf3d4_sk
     ports:
       - "8005:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
@@ -80,13 +80,13 @@ services:
     container_name: ca.team3.peer5
     networks:
       - main
-  ca.team3.peer6:
+  ca.org6.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer6
-      - FABRIC_CA_SERVER_CA_CERTFILE=
-      - FABRIC_CA_SERVER_CA_KEYFILE=
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org6.team3-cert
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/c7ed1b8749c1a3d2c3eb9d1f7c1477df2502e966f455dbe0a2380cd2fb70f56d_sk
     ports:
       - "8006:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
