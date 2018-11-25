@@ -1,10 +1,10 @@
 
 OrdererOrgs:
 
-  - Name: Team3
-    Domain: team3
+  - Name: OrdererTeam3
+    Domain: orderer.team3
     Specs:
-      - Hostname: orderer
+      - Hostname: orderer.team3
 
 PeerOrgs:
 
@@ -13,7 +13,6 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
     Users:
       Count: 1
   - Name: Team3Org2
@@ -21,7 +20,6 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
     Users:
       Count: 1
   - Name: Team3Org3
@@ -29,7 +27,6 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
     Users:
       Count: 1
   - Name: Team3Org4
@@ -37,7 +34,7 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
+      
     Users:
       Count: 1    
   - Name: Team3Org5
@@ -45,7 +42,7 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
+      
     Users:
       Count: 1
   - Name: Team3Org6
@@ -53,6 +50,5 @@ PeerOrgs:
     Template:
       Count: 1
       Start: 0
-      Hostname: .Prefix.Index
     Users:
       Count: 1

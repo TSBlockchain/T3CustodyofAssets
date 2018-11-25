@@ -9,90 +9,90 @@ services:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer1
+      - FABRIC_CA_SERVER_CA_NAME=ca.org1.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org1.team3-cert.pem
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/d7f23560869cdc061a9af3e1a624dd512e5cb870039437a61a8df27622760f38_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/473319126ce6ab292c81bf07d5eea81cdef7b22c00affc628fead30e086184b9_sk
     ports:
       - "8001:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
       - ./crypto-config/peerOrganizations/org1.team3/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer1
+    container_name: ca.org1.team3
     networks:
       - main
   ca.org2.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer2
+      - FABRIC_CA_SERVER_CA_NAME=ca.org2.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.team3-cert
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/82576490305801e90ca72c9ec05b69d298177c28e7e737ff5f2dad6aef7d69e2_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/24cc2a4bc7a93d42e81b977ad91d27a39d61a3e54fc50ed367373ad09c7748fd_sk
     ports:
       - "8002:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
       - ./crypto-config/peerOrganizations/org2.team3/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer2
+    container_name: ca.org2.team3
     networks:
       - main
   ca.org3.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer3
+      - FABRIC_CA_SERVER_CA_NAME=ca.org3.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.team3-cert
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/82fa25d91bac750add0a1c50a933a24270097a497146ab3e919f5e4f129a3ce9_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/f179b133e62beaa8b7dadfeaa4cb24f702810a3cd97bcf1dc972f2c5e5ff23f9_sk
     ports:
       - "8003:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
       - ./crypto-config/peerOrganizations/org3.team3/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer3
+    container_name: ca.org3.team3
     networks:
       - main    
   ca.org4.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer4
+      - FABRIC_CA_SERVER_CA_NAME=ca.org4.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.team3-cert
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/3341e4b898b818ca9d874ad30e8df7375dd5cdbdd0d3080b8e4f9d26b667bd2d_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5169013ec9408ff78e3402bfe4994aeeee80c9bcf681dc433c526063d9f28408_sk
     ports:
       - "8004:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer4/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer4
+      - ./crypto-config/peerOrganizations/org4.team3/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.org4.team3
     networks:
       - main
   ca.org5.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer5
+      - FABRIC_CA_SERVER_CA_NAME=ca.org5.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.team3-cert
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/17eecc8e3c18c096e52c7b0551da59147e4caf3bb3a328bc5050d1d31f1bf3d4_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/dcb25b2d6918ae98d8232895a5cb26c6ca2c94fde430e312638f7c29ae5ea095_sk
     ports:
       - "8005:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer5/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer5
+      - ./crypto-config/peerOrganizations/org5.team3/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.org5.team3
     networks:
       - main
   ca.org6.team3:
     image: hyperledger/fabric-ca
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
-      - FABRIC_CA_SERVER_CA_NAME=ca.team3.peer6
+      - FABRIC_CA_SERVER_CA_NAME=ca.org6.team3
       - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org6.team3-cert
-      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/c7ed1b8749c1a3d2c3eb9d1f7c1477df2502e966f455dbe0a2380cd2fb70f56d_sk
+      - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/0c8ab93a2e83078bff26e1128f44558a18aacf3f58a53619383d0bd894b9f99d_sk
     ports:
       - "8006:7054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw'
     volumes:
-      - ./crypto-config/peerOrganizations/ca.team3.peer6/ca/:/etc/hyperledger/fabric-ca-server-config
-    container_name: ca.team3.peer6
+      - ./crypto-config/peerOrganizations/org6.team3/ca/:/etc/hyperledger/fabric-ca-server-config
+    container_name: ca.org6.team3
     networks:
       - main
   orderer.team3:
@@ -111,28 +111,29 @@ services:
       - 7050:7050
     volumes:
       - ./config/:/etc/hyperledger/configtx
-      - ./crypto-config/ordererOrganizations/team3/orderers/orderer.team3/:/etc/hyperledger/msp/orderer
-      - ./crypto-config/peerOrganizations/team3.peer1/:/etc/hyperledger/msp/peer1
-      - ./crypto-config/peerOrganizations/team3.peer2/:/etc/hyperledger/msp/peer2
-      - ./crypto-config/peerOrganizations/team3.peer3/:/etc/hyperledger/msp/peer3
-      - ./crypto-config/peerOrganizations/team3.peer4/:/etc/hyperledger/msp/peer4
-      - ./crypto-config/peerOrganizations/team3.peer5/:/etc/hyperledger/msp/peer5
-      - ./crypto-config/peerOrganizations/team3.peer6/:/etc/hyperledger/msp/peer6
-  
-  peer0.team3:
-    container_name: peer0.team3
+      - ./crypto-config/ordererOrganizations/orderer.team3/orderers/orderer.team3.orderer.team3/:/etc/hyperledger/msp/orderer
+      - ./crypto-config/peerOrganizations/org1.team3/:/etc/hyperledger/msp/peerOrg1
+      - ./crypto-config/peerOrganizations/org2.team3/:/etc/hyperledger/msp/peerOrg2
+      - ./crypto-config/peerOrganizations/org3.team3/:/etc/hyperledger/msp/peerOrg3
+      - ./crypto-config/peerOrganizations/org4.team3/:/etc/hyperledger/msp/peerOrg4
+      - ./crypto-config/peerOrganizations/org5.team3/:/etc/hyperledger/msp/peerOrg5
+      - ./crypto-config/peerOrganizations/org6.team3/:/etc/hyperledger/msp/peerOrg6
+    networks:
+      - main
+  peer0.org1.team3:
+    container_name: peer0.org1.team3
     image: hyperledger/fabric-peer
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer0.team3
+      - CORE_PEER_ID=peer0.org1.team3
       - CORE_LOGGING_PEER=info
       - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=Org1Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer0.team3:7051
+      - CORE_PEER_ADDRESS=peer0.org1.team3:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:6001
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
@@ -142,28 +143,59 @@ services:
       - 7053:7053
     volumes:
       - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer0.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
+      - ./crypto-config/peerOrganizations/org1.team3/peers/peer0.org1.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org1.team3/peers/users/:/etc/hyperledger/msp/users
       - ./config:/etc/hyperledger/configtx
     depends_on:
       - orderer.team3
       - couchdb1
     networks:
       - main 
-  peer1.team3:
-    container_name: peer1.team3
+  peer0.org2.team3:
+    container_name: peer0.org2.team3
     image: hyperledger/fabric-peer
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer1.team3
+      - CORE_PEER_ID=peer0.org2.team3
       - CORE_LOGGING_PEER=info
       - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=Org2Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer1.team3:7051
+      - CORE_PEER_ADDRESS=peer0.org2.team3:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:6002
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
+    command: peer node start
+    ports:
+      - 7009:7051
+      - 7013:7053
+    volumes:
+      - /var/run/:/host/var/run
+      - ./crypto-config/peerOrganizations/org2.team3/peers/peer0.org2.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org2.team3/peers/users/:/etc/hyperledger/msp/users
+      - ./config:/etc/hyperledger/configtx
+    depends_on:
+      - orderer.team3
+      - couchdb2
+    networks:
+      - main
+  peer0.org3.team3:
+    container_name: peer0.org3.team3
+    image: hyperledger/fabric-peer
+    environment:
+      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+      - CORE_PEER_ID=peer0.org3.team3
+      - CORE_LOGGING_PEER=info
+      - CORE_CHAINCODE_LOGGING_LEVEL=info
+      - CORE_PEER_LOCALMSPID=Org3Team3MSP
+      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
+      - CORE_PEER_ADDRESS=peer0.org3.team3:7051
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
@@ -173,28 +205,28 @@ services:
       - 7054:7053
     volumes:
       - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer1.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
+      - ./crypto-config/peerOrganizations/org3.team3/peers/peer0.org3.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org3.team3/peers/users/:/etc/hyperledger/msp/users
       - ./config:/etc/hyperledger/configtx
     depends_on:
       - orderer.team3
-      - couchdb2
+      - couchdb3
     networks:
       - main
-  peer3.team3:
-    container_name: peer3.team3
+  peer0.org4.team3:
+    container_name: peer0.org4.team3
     image: hyperledger/fabric-peer
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer3.team3
+      - CORE_PEER_ID=peer0.org4.team3
       - CORE_LOGGING_PEER=info
       - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=Org4Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer3.team3:7051
+      - CORE_PEER_ADDRESS=peer0.org4.team3:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:6003
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
@@ -204,28 +236,28 @@ services:
       - 7056:7053
     volumes:
       - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer3.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
+      - ./crypto-config/peerOrganizations/org4.team3/peers/peer0.org4.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org4.team3/peers/users/:/etc/hyperledger/msp/users
       - ./config:/etc/hyperledger/configtx
     depends_on:
       - orderer.team3
-      - couchdb3
+      - couchdb4
     networks:
       - main
-  peer4.team3:
-    container_name: peer4.team3
+  peer0.org5.team3:
+    container_name: peer0.org5.team3
     image: hyperledger/fabric-peer
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer4.team3
+      - CORE_PEER_ID=peer0.org5.team3
       - CORE_LOGGING_PEER=info
       - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=Org5Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer4.team3:7051
+      - CORE_PEER_ADDRESS=peer0.org5.team3:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:6004
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
@@ -235,28 +267,28 @@ services:
       - 7059:7053
     volumes:
       - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer4.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
+      - ./crypto-config/peerOrganizations/org5.team3/peers/peer0.org5.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org5.team3/peers/users/:/etc/hyperledger/msp/users
       - ./config:/etc/hyperledger/configtx
     depends_on:
       - orderer.team3
-      - couchdb4
+      - couchdb5
     networks:
       - main
-  peer5.team3:
-    container_name: peer5.team3
+  peer0.org6.team3:
+    container_name: peer0.org6.team3
     image: hyperledger/fabric-peer
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer5.team3
+      - CORE_PEER_ID=peer0.org6.team3
       - CORE_LOGGING_PEER=info
       - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
+      - CORE_PEER_LOCALMSPID=Org6Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer5.team3:7051
+      - CORE_PEER_ADDRESS=peer0.org6.team3:7051
       - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:6005
+      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb6:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
       - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
@@ -266,45 +298,15 @@ services:
       - 7058:7053
     volumes:
       - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer5.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
-      - ./config:/etc/hyperledger/configtx
-    depends_on:
-      - orderer.team3
-      - couchdb5
-    networks:
-      - main 
-  peer6.team3:
-    container_name: peer6.team3
-    image: hyperledger/fabric-peer
-    environment:
-      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer6.team3
-      - CORE_LOGGING_PEER=info
-      - CORE_CHAINCODE_LOGGING_LEVEL=info
-      - CORE_PEER_LOCALMSPID=Org1MSP
-      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
-      - CORE_PEER_ADDRESS=peer6.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
-      - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb6:6006
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
-      - CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
-    working_dir: /opt/gopath/src/github.com/hyperledger/fabric
-    command: peer node start
-    ports:
-      - 7010:7051
-      - 7030:7053
-    volumes:
-      - /var/run/:/host/var/run
-      - ./crypto-config/peerOrganizations/team3/peers/peer6.team3/msp/:/etc/hyperledger/msp/peer
-      - ./crypto-config/peerOrganizations/team3/peers/users/:/etc/hyperledger/msp/users
+      - ./crypto-config/peerOrganizations/org6.team3/peers/peer0.org6.team3/msp/:/etc/hyperledger/msp/peer
+      - ./crypto-config/peerOrganizations/org6.team3/peers/users/:/etc/hyperledger/msp/users
       - ./config:/etc/hyperledger/configtx
     depends_on:
       - orderer.team3
       - couchdb6
     networks:
-      - main
+      - main 
+  
   couchdb1:
     container_name: couchdb1
     image: hyperledger/fabric-couchdb
@@ -384,5 +386,6 @@ services:
       - /var/run/:/host/var/run/
       - ./../chaincode/:/opt/gopath/src/github.com/
       - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
+      - ./config:/etc/hyperledger/configtx
     networks:
       - main
