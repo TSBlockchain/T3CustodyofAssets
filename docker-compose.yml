@@ -25,7 +25,7 @@ services:
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.org2.team3
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.team3-cert
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org2.team3-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/24cc2a4bc7a93d42e81b977ad91d27a39d61a3e54fc50ed367373ad09c7748fd_sk
     ports:
       - "8002:7054"
@@ -40,7 +40,7 @@ services:
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.org3.team3
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.team3-cert
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org3.team3-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/f179b133e62beaa8b7dadfeaa4cb24f702810a3cd97bcf1dc972f2c5e5ff23f9_sk
     ports:
       - "8003:7054"
@@ -55,7 +55,7 @@ services:
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.org4.team3
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.team3-cert
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org4.team3-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/5169013ec9408ff78e3402bfe4994aeeee80c9bcf681dc433c526063d9f28408_sk
     ports:
       - "8004:7054"
@@ -70,7 +70,7 @@ services:
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.org5.team3
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.team3-cert
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org5.team3-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/dcb25b2d6918ae98d8232895a5cb26c6ca2c94fde430e312638f7c29ae5ea095_sk
     ports:
       - "8005:7054"
@@ -85,7 +85,7 @@ services:
     environment:
       - FABRIC_CA_HOME=/etc/hyperledger/fabric-ca-server
       - FABRIC_CA_SERVER_CA_NAME=ca.org6.team3
-      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org6.team3-cert
+      - FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric-ca-server-config/ca.org6.team3-cert.pem
       - FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric-ca-server-config/0c8ab93a2e83078bff26e1128f44558a18aacf3f58a53619383d0bd894b9f99d_sk
     ports:
       - "8006:7054"
@@ -131,7 +131,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org1Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org1.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -162,7 +162,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org2Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org2.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -193,7 +193,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org3Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org3.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -224,7 +224,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org4Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org4.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb4:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -255,7 +255,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org5Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org5.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb5:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -286,7 +286,7 @@ services:
       - CORE_PEER_LOCALMSPID=Org6Team3MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer
       - CORE_PEER_ADDRESS=peer0.org6.team3:7051
-      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=
+      - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=network_main
       - CORE_LEDGER_STATE_STATEDATABASE=CouchDB
       - CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb6:5984
       - CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
@@ -384,7 +384,7 @@ services:
     command: /bin/bash
     volumes:
       - /var/run/:/host/var/run/
-      - ./../chaincode/:/opt/gopath/src/github.com/
+      - ./chaincode/:/opt/gopath/src/github.com/
       - ./crypto-config:/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/
       - ./config:/etc/hyperledger/configtx
     networks:
